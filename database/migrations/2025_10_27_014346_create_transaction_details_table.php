@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->id();
-            $table->foreign('transaction_id')->constrained();
-            $table->foreign('item_id')->constrained();
+            $table->foreignId('transaction_id')->constrained();
+            $table->foreignId('item_id')->constrained();
             $table->integer('qty');
             $table->integer('subtotal');
             $table->timestamps();
